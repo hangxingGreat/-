@@ -43,6 +43,21 @@
           institute: $("#inputInstitute").val(),
           time: $("#inputTime").val()
         };
+        if(data.achievement=="")
+        {
+          alert("成果名称不能为空");
+          return;
+        }
+        if(data.institute=="")
+        {
+          alert("验证机构不能为空");
+          return;
+        }
+        if(data.time=="")
+        {
+          alert("验证时间不能为空");
+          return;
+        }
         $.post("<?=site_url('validationmanage/add')?>",data,function(res,status)
           {
             alert(res);

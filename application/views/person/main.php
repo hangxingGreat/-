@@ -38,13 +38,17 @@
           return;
         }
         var data = { 
-            id: $("inputID").val(),
             name: $("#inputName").val(), 
             duties: $("#inputDuty").val(),
             phonenumber: $("#inputPhonenumber").val(),
             email: $("#inputEmail").val(),
             position: $("#inputPosition").val()
         };
+        if(data.name=="")
+        {
+          alert("人员姓名不能为空");
+          return;
+        }
         $.post("<?=site_url('personmanage/add')?>",data,function(res,status)
         {
           alert(res);

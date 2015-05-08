@@ -45,6 +45,31 @@
           end: $("#inputEnd").val(),
           person: $("#inputPerson").val()
         };
+        if(data.institute=="")
+        {
+          alert("学习机构不能为空");
+          return;
+        }
+        if(data.content=="")
+        {
+          alert("学习内容不能为空");
+          return;
+        }
+        if(data.start=="")
+        {
+          alert("开始时间不能为空");
+          return;
+        }
+        if(data.end=="")
+        {
+          alert("结束时间不能为空");
+          return;
+        }
+        if(data.person=="")
+        {
+          alert("人员不能为空");
+          return;
+        }
         $.post("<?=site_url('learnmanage/add')?>",data,function(res,status)
           {
             alert(res);

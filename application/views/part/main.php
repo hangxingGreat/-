@@ -45,6 +45,31 @@
           end: $("#inputEnd").val(),
           person: $("#inputPerson").val()
         };
+        if(data.name=="")
+        {
+          alert("兼职学术机构不能为空");
+          return;
+        }
+        if(data.duty=="")
+        {
+          alert("职责不能为空");
+          return;
+        }
+        if(data.start=="")
+        {
+          alert("开始时间不能为空");
+          return;
+        }
+        if(data.end=="")
+        {
+          alert("结束时间不能为空");
+          return;
+        }
+        if(data.person=="")
+        {
+          alert("兼职人员不能为空");
+          return;
+        }
         $.post("<?=site_url('partmanage/add')?>",data,function(res,status)
           {
             alert(res);

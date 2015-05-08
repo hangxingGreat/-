@@ -45,6 +45,31 @@
           institute: $("#inputInstitute").val(),
           time: $("#inputTime").val()
         };
+        if(data.name=="")
+        {
+          alert("软件著作权名不能为空");
+          return;
+        }
+        if(data.register=="")
+        {
+          alert("著作权号不能为空");
+          return;
+        }
+        if(data.person=="")
+        {
+          alert("著作权人不能为空");
+          return;
+        }
+        if(data.institute=="")
+        {
+          alert("授予单位不能为空");
+          return;
+        }
+        if(data.time=="")
+        {
+          alert("授予时间不能为空");
+          return;
+        }
         $.post("<?=site_url('copyrightmanage/add')?>",data,function(res,status)
           {
             alert(res);
@@ -114,19 +139,19 @@
                 <div class="modal-body">
                       <form class="form-horizontal">
                           <div class="form-group">
-                            <label for="inputName" class="col-sm-3 control-label">专利权名</label>
+                            <label for="inputName" class="col-sm-3 control-label">软件著作权名</label>
                             <div class="col-sm-8">
                               <input type="text" class="form-control" id="inputName" placeholder="List">
                             </div>
                           </div>
                           <div class="form-group">
-                            <label for="inputRegister" class="col-sm-3 control-label">专利权编号</label>
+                            <label for="inputRegister" class="col-sm-3 control-label">著作权编号</label>
                             <div class="col-sm-8">
                               <input type="text" class="form-control" id="inputRegister" placeholder="Register">
                             </div>
                           </div>
                           <div class="form-group">
-                            <label for="inputPerson" class="col-sm-3 control-label">专利权人</label>
+                            <label for="inputPerson" class="col-sm-3 control-label">著作权人</label>
                             <div class="col-sm-8">
                               <input type="text" class="form-control" id="inputPerson" placeholder="Person">
                             </div>

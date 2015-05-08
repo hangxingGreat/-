@@ -44,6 +44,26 @@
           time: $("#inputTime").val(),
           level: $("#inputLevel").val()
         };
+        if(data.achievement=="")
+        {
+          alert("成果名称不能为空");
+          return;
+        }
+        if(data.name=="")
+        {
+          alert("获奖名称不能为空");
+          return;
+        }
+        if(data.time=="")
+        {
+          alert("获奖时间不能为空");
+          return;
+        }
+        if(data.level=="")
+        {
+          alert("获奖级别不能为空");
+          return;
+        }
         $.post("<?=site_url('awardmanage/add')?>",data,function(res,status)
           {
             alert(res);

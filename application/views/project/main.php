@@ -50,6 +50,51 @@
           credit: $("#inputCredit").val(),
           type: $("#inputType").val()
         };
+        if(data.name=="")
+        {
+          alert("项目名称不能为空");
+          return;
+        }
+        if(data.source=="")
+        {
+          alert("项目来源不能为空");
+          return;
+        }
+        if(data.principal=="")
+        {
+          alert("项目负责人不能为空");
+          return;
+        }
+        if(data.start=="")
+        {
+          alert("开始时间不能为空");
+          return;
+        }
+        if(data.end=="")
+        {
+          alert("结束时间不能为空");
+          return;
+        }
+        if(data.money=="")
+        {
+          alert("项目金额不能为空");
+          return;
+        }
+        if(data.contract=="")
+        {
+          alert("合同号不能为空");
+          return;
+        }
+        if(data.credit=="")
+        {
+          alert("经费卡号不能为空");
+          return;
+        }
+        if(data.type=="")
+        {
+          alert("项目类型不能为空");
+          return;
+        }
         $.post("<?=site_url('projectmanage/add')?>",data,function(res,status)
           {
             $("#refresh_list").click(); 

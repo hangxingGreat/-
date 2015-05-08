@@ -44,6 +44,26 @@
           publishdate: $("#inputPublishdate").val(),
           personlist: $("#inputPersonlist").val()
         };
+        if(data.name=="")
+        {
+          alert("著作名称不能为空");
+          return;
+        }
+        if(data.publisher=="")
+        {
+          alert("出版商不能为空");
+          return;
+        }
+        if(data.publishdate=="")
+        {
+          alert("出版时间不能为空");
+          return;
+        }
+        if(data.personlist=="")
+        {
+          alert("作者名单不能为空");
+          return;
+        }
         $.post("<?=site_url('workmanage/add')?>",data,function(res,status)
           {
             alert(res);

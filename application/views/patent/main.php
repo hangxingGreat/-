@@ -45,6 +45,31 @@
           institute: $("#inputInstitute").val(),
           time: $("#inputTime").val()
         };
+        if(data.name=="")
+        {
+          alert("专利权名不能为空");
+          return;
+        }
+        if(data.register=="")
+        {
+          alert("专利权号不能为空");
+          return;
+        }
+        if(data.person=="")
+        {
+          alert("专利权人不能为空");
+          return;
+        }
+        if(data.institute=="")
+        {
+          alert("授予单位不能为空");
+          return;
+        }
+        if(data.time=="")
+        {
+          alert("授予时间不能为空");
+          return;
+        }
         $.post("<?=site_url('patentmanage/add')?>",data,function(res,status)
           {
             alert(res);
