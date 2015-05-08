@@ -52,14 +52,15 @@
       <ul class="nav nav-tabs" role="tablist">
         <li role="presentation"><a href="<?=site_url('statistics/index')?>">人员项目信息统计</a></li>
         <li role="presentation"><a href="<?=site_url('statistics/projectmoney')?>">项目金额统计</a></li>
-        <li role="presentation" class="active"><a href="#">每人获奖次数</a></li>
+        <li role="presentation" class="active"><a href="#">获奖次数统计</a></li>
+        <li role="presentation"><a href="<?=site_url('statistics/fundsstat')?>">项目经费到账</a></li>
       </ul>
       <br/>
       <div class="panel panel-default">
       <!-- Default panel contents -->
-      <div class="panel-heading"><h4 class="text-center">人员获奖统计信息</h4></div>
+      <div class="panel-heading"><h4 class="text-center">人员及项目获奖统计信息</h4></div>
       <div class="panel-body">
-        <p>下面是每人获奖的总次数，您可以<a href="<?=site_url('search/index')?>">查询</a>具体信息</p>
+        <p>下面是人员和项目的获奖次数统计，您可以<a href="<?=site_url('search/index')?>">查询</a>具体信息</p>
       </div>
 
       <table class="table table-striped table-hover">
@@ -71,6 +72,21 @@
         <?php foreach($res as $item): ?>
         <tr>
           <td><?=$item->id?></td>
+          <td><?=$item->name?></td>
+          <td><?=$item->times?></td>
+        </tr>
+        <?php endforeach; ?>
+      </table>
+      <hr/>
+      <table class="table table-striped table-hover">
+        <tr>
+          <td>项目编号</td>
+          <td>名称</td>
+          <td>次数</td>
+        </tr>
+        <?php foreach($resp as $item): ?>
+        <tr>
+          <td><?=$item->projectid?></td>
           <td><?=$item->name?></td>
           <td><?=$item->times?></td>
         </tr>

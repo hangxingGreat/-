@@ -50,30 +50,32 @@
       <hr/>
 
       <ul class="nav nav-tabs" role="tablist">
-        <li role="presentation" class="active"><a href="#">人员项目信息统计</a></li>
+        <li role="presentation"><a href="<?=site_url('statistics/index')?>">人员项目信息统计</a></li>
         <li role="presentation"><a href="<?=site_url('statistics/projectmoney')?>">项目金额统计</a></li>
         <li role="presentation"><a href="<?=site_url('statistics/awardtotal')?>">获奖次数统计</a></li>
-        <li role="presentation"><a href="<?=site_url('statistics/fundsstat')?>">项目经费到账</a></li>
+        <li role="presentation" class="active"><a href="#">项目经费到账</a></li>
       </ul>
       <br/>
       <div class="panel panel-default">
       <!-- Default panel contents -->
-      <div class="panel-heading"><h4 class="text-center">人员项目统计信息</h4></div>
+      <div class="panel-heading"><h4 class="text-center">项目统计信息</h4></div>
       <div class="panel-body">
-        <p>下面是每一个人所参与的项目总数，您可以<a href="<?=site_url('search/index')?>">查询</a>具体信息</p>
+        <p>下面是每种货币的项目最大金额，您可以<a href="<?=site_url('search/index')?>">查询</a>具体信息</p>
       </div>
 
       <table class="table table-striped table-hover">
         <tr>
-          <td>人员编号</td>
-          <td>姓名</td>
-          <td>参与项目总数</td>
+          <td>项目编号</td>
+          <td>项目名称</td>
+          <td>已到经费</td>
+          <td>未到经费</td>
         </tr>
         <?php foreach($res as $item): ?>
         <tr>
-          <td><?=$item->id?></td>
+          <td><?=$item->projectid?></td>
           <td><?=$item->name?></td>
-          <td><?=$item->count?></td>
+          <td><?=$item->income?></td>
+          <td><?=$item->notpaid?></td>
         </tr>
         <?php endforeach; ?>
       </table>

@@ -52,7 +52,8 @@
       <ul class="nav nav-tabs" role="tablist">
         <li role="presentation"><a href="<?=site_url('statistics/index')?>">人员项目信息统计</a></li>
         <li role="presentation" class="active"><a href="#">项目金额统计</a></li>
-        <li role="presentation"><a href="<?=site_url('statistics/awardtotal')?>">每人获奖次数</a></li>
+        <li role="presentation"><a href="<?=site_url('statistics/awardtotal')?>">获奖次数统计</a></li>
+        <li role="presentation"><a href="<?=site_url('statistics/fundsstat')?>">项目经费到账</a></li>
       </ul>
       <br/>
       <div class="panel panel-default">

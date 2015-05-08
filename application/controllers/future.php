@@ -15,5 +15,10 @@
 			echo $this->input->post('mode');
 			echo $this->input->post('from');
 		}
+
+		public function test()
+		{
+			var_dump(date("Y-m"));
+		}
 	}
 ?>
