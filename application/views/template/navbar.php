@@ -36,6 +36,7 @@
                 <li><a href="<?=site_url('awardmanage/index')?>">获奖情况信息</a></li>
               </ul>
             </li>
+            <li><a href="<?=site_url('statistics/index')?>"><i class="fa fa-bar-chart"></i>&nbsp;信息统计</a></li>
             <li><a href="<?=site_url('export/index')?>"><i class="fa fa-file"></i>&nbsp;导出文件</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
